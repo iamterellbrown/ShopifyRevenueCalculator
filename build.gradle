@@ -1,4 +1,4 @@
-group 'com.simba'
+group 'simba.simba'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
@@ -11,4 +11,6 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 }
