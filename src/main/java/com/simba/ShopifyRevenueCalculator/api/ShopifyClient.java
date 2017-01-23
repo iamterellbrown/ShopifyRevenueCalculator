@@ -18,10 +18,6 @@ public class ShopifyClient {
     private static OrderAPI orderAPI;
 
 
-    /**
-     * Generatates (if non-existent) and returns a gateway to Shopify's Order API
-     * @return
-     */
     private static OrderAPI getOrderAPI() {
 
         if (orderAPI == null) {
@@ -37,11 +33,6 @@ public class ShopifyClient {
     }
 
 
-    /**
-     * Returns a list of orders on the page number provided
-     * @param currentPageNo
-     * @return
-     */
     public static ArrayList<Responses.Order> getOrdersByPageNumber(int currentPageNo) {
 
         Call<Responses.MyOrders> apiRequest = ShopifyClient.getOrderAPI().getAllOrders(

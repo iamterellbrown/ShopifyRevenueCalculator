@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class OrderRevenueCalculator {
 
 
+
     public static BigDecimal calculate() {
         int currentPageNo = 1;
         BigDecimal revenueOnCurrentPage = new BigDecimal(0);
@@ -20,8 +21,6 @@ public class OrderRevenueCalculator {
         ArrayList<Order> orderList;
 
         while (true) {
-           System.out.println("Calculating revenue for orders on page " + currentPageNo +" ...");
-
             orderList = ShopifyClient.getOrdersByPageNumber(currentPageNo);
 
             if (orderList == null || orderList.isEmpty()) {
@@ -31,11 +30,7 @@ public class OrderRevenueCalculator {
             revenueOnCurrentPage = calculateRevenueFromOrderList(orderList, currentPageNo);
             totalRevenue = totalRevenue.add(revenueOnCurrentPage);
             currentPageNo += 1;
-       }
-
-        System.out.println("There are no more orders.");
-        System.out.println();
-        System.out.println();
+        }
         return totalRevenue;
     }
 
@@ -45,8 +40,6 @@ public class OrderRevenueCalculator {
         for (Order order : listOfOrders) {
             revenue = revenue.add(order.getOrderPrice());
         }
-
-        System.out.println("The revenue for page " + pageNo + " of your orders is " + revenue);
         return revenue;
     }
 }

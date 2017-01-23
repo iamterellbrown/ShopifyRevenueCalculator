@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * These classes are used by retrofit to map the JSON responses to Java Objects
  *
  * Note: Definitions may not contain all fields associated with the JSON response.
- * Only those that are of use whithin this context.
+ * Only those that are of use within this context.
  *
  * Created by t.brown on 1/18/17.
  */
